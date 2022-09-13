@@ -1,0 +1,45 @@
+<ion-content>
+
+  <h1>Cantina da Tina</h1>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="limpar()">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <div class="conteudo">
+    <div class="linha">
+      <div class="produto">Hotdog</div>
+      <div class="mostrador">
+        <ion-button (click)="removerHotdog()">-</ion-button>
+        <input type="number" [(ngModel)]="quantidadeHotdog" (keyup)="calcularTotalConta()">
+        <ion-button (click)="adicionarHotdog()">+</ion-button>
+      </div>
+    </div>
+
+    <div class="linha">
+      <div class="produto">Coxinha</div>
+      <div class="mostrador">
+        <ion-button (click)="removerCoxinha()">-</ion-button>
+        <input type="number" [(ngModel)]="quantidadeCoxinha" (keyup)="calcularTotalConta()">
+        <ion-button (click)="adicionarCoxinha()">+</ion-button>
+      </div>
+    </div>
+
+    <div class="linha">
+      <div class="produto">Bala</div>
+      <div class="mostrador">
+        <ion-button (click)="removerBala()">-</ion-button>
+        <input type="number" [(ngModel)]="quantidadeBala" (keyup)="calcularTotalConta()">
+        <ion-button (click)="adicionarBala()">+</ion-button>
+      </div>
+    </div>
+
+    <div class="linha resultado">
+      <div>Total</div>
+      <div>{{ totalConta | currency: 'BRL' }}</div>
+    </div>
+
+  </div>
+</ion-content>
